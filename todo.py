@@ -12,3 +12,8 @@ class TodoList:
 
     def complete(self, index):
         self.items[index]["done"] = True
+
+    def delete(self, index):
+        if not 0 <= index < len(self.items):
+            raise ValueError(f"{index}번 항목이 없습니다")
+        return self.items.pop(index)
